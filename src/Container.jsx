@@ -1,9 +1,12 @@
-import React from 'react'
+import Statistics from "./Statistics";
+import Textarea from "./Textarea";
+
 
 export default function Container() {
   return (
     <main>
-      container
+      <Textarea/>
+      <Statistics/>
     </main>
   )
 }
