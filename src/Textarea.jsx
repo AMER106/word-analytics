@@ -15,6 +15,8 @@ export default function Textarea() {
         
         setShowWarning("No special character is allowed")
         newText=newText.replace("@","")
+      }else{
+        setShowWarning("")
       }
       setText(newText);
       console.log(text);
