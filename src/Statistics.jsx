@@ -1,12 +1,12 @@
 
 
-export default function Statistics({numberOfCharacters}) {
+export default function Statistics({numberOfCharacters,instagramCharactersLeft,facebookCharactersLeft,numberOfWords}) {
   return (
     <section className='stats'>
-     <Stats label="words" number={0}/>
+     <Stats label="words" number={numberOfWords}/>
      <Stats label="Characters" number={numberOfCharacters}/>
-     <Stats label="Instagram" number={220}/>
-     <Stats label="Facebook" number={2220}/>
+     <Stats label="Instagram" number={instagramCharactersLeft}/>
+     <Stats label="Facebook" number={facebookCharactersLeft}/>
       
     </section>
   )
