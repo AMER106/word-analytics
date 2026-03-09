@@ -5,14 +5,17 @@ import Textarea from "./Textarea";
 
 export default function Container() {
   const[text,setText]=useState("");
-  const numberOfCharacters=text.length;
-  const numberOfWords= text.split(/\s/).filter((word)=>word!=="").length;
-  const instagramCharactersLeft=280-text.length;
-  const facebookCharactersLeft=2200-text.length;
+ 
+  const stats={
+    numberOfCharacters:text.length,
+    numberOfWords:text.split(/\s/).filter((word)=> word!=="").length,
+    instagramCharactersLeft:280-text.length,
+    facebookCharactersLeft:2200-text.length,
+  }
   return (
     <main className="container">
       <Textarea text={text} setText={setText}/>
-      <Statistics numberOfCharacters={numberOfCharacters} numberOfWords={numberOfWords} instagramCharactersLeft={instagramCharactersLeft}  facebookCharactersLeft={facebookCharactersLeft} />
+      <Statistics stats={stats}/>
     </main>
   )
 }
