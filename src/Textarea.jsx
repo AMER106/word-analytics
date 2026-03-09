@@ -1,8 +1,8 @@
 import { useState } from "react"
 import Warning from "./Warning";
 
-export default function Textarea() {
-  const [text,setText]=useState("");
+export default function Textarea({text,setText}) {
+  
   
   const[showWarning,setShowWarning]=useState()
   const handleChnage=(event)=>{
