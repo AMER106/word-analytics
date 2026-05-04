@@ -18,6 +18,7 @@ export default function Container() {
     <main className="container">
       <Textarea text={text} setText={setText}/>
       <Statistics stats={stats}/>
+      <p>write something here</p>
     </main>
   )
 }
