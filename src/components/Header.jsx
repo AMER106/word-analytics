@@ -7,6 +7,8 @@ export default function Header() {
     <header>
       <BackgroundImage/>
       <H1/>
+      <h1> now we are testing the jenkins in our react project with the help of chatgpt</h1>
+
     </header>
   )
 }
