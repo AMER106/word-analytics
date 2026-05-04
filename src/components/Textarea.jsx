@@ -30,7 +30,7 @@ return (
     {
      <Warning warning={showWarning} /> 
     }
-    
+    <p>rhis is a Textarea component</p>
   </>
 )
   
