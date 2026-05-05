@@ -48,6 +48,14 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/**', fingerprint: true
             }
         }
+        stage('Deploy to Local Folder') {
+    steps {
+        bat '''
+        if not exist C:\\jenkins-deployments\\word-analytics mkdir C:\\jenkins-deployments\\word-analytics
+        xcopy /E /I /Y dist C:\\jenkins-deployments\\word-analytics
+        '''
+    }
+}
     }
 
     post {
