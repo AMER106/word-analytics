@@ -39,6 +39,7 @@ pipeline {
         stage('Run Lint') {
     steps {
         bat 'npm run lint'
+        echo 'ESLint passed successfully.'
     }
 }
 
