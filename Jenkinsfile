@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        pollSCM('* * * * *')
+        pollSCM('H/5 * * * *')
     }
 
     tools {
@@ -33,7 +33,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'npm ci'
             }
         }
 
@@ -41,6 +41,22 @@ pipeline {
             steps {
                 bat 'npm run build'
             }
+        }
+
+        stage('Archive Build Artifact') {
+            steps {
+                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'CI pipeline completed successfully. Vue dist folder archived.'
+        }
+
+        failure {
+            echo 'CI pipeline failed. Check the console output.'
         }
     }
 }
