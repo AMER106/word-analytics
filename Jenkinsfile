@@ -36,6 +36,11 @@ pipeline {
                 bat 'npm ci'
             }
         }
+        stage('Run Lint') {
+    steps {
+        bat 'npm run lint'
+    }
+}
 
         stage('Build Vue App') {
             steps {
